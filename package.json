@@ -1,0 +1,27 @@
+{
+  "name": "symbols-pack",
+  "version": "1.0.0",
+  "description": "A helpful utility for accessing special characters and common symbols as plain text in any project",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricardoliveira5ro/symbols-pack.git"
+  },
+  "keywords": [
+    "symbols",
+    "special",
+    "characters"
+  ],
+  "author": "Ricardo Oliveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ricardoliveira5ro/symbols-pack/issues"
+  },
+  "homepage": "https://github.com/ricardoliveira5ro/symbols-pack#readme",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
