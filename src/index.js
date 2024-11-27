@@ -1,15 +1,15 @@
-const defaultSymbols = {
-    dollar: '$',
-    euro: '€',
-    yen: '¥',
-    pound: '£',
-    infinity: '∞',
-    copyright: '©',
-    trademark: '™'
-};
+const { currency, symbols, brackets, math, punctuation, letters, arrows } = require('./symbols')
 
 function getSymbols() {
-    return { ...defaultSymbols };
+    return { 
+        ...currency,
+        ...symbols,
+        ...brackets,
+        ...math,
+        ...punctuation,
+        ...letters,
+        ...arrows
+    };
 }
 
 module.exports = { getSymbols };
