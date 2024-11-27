@@ -27,7 +27,7 @@ console.log(symbols.copyright); // Output: ©
 
 ### Supported Symbols
 
-You can find the complete list of available symbols [here](./src/index.js)
+You can find the complete list of available symbols [here](./src/symbols.js)
 
 ### Contributing
 

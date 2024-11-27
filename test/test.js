@@ -1,29 +1,174 @@
 const { getSymbols } = require('../src/index');
 
 describe('getSymbols', () => {
-    test('symbols value', () => {
-        const symbols = getSymbols();
-        expect(symbols).toEqual({
+    const allSymbols = getSymbols();
+
+    test('contains all symbol values', () => {
+        expect(allSymbols).toEqual({
+            // Currency symbols
             dollar: '$',
             euro: '€',
             yen: '¥',
             pound: '£',
-            infinity: '∞',
+            cent: '¢',
+            tugrik: '₮',
+            baht: '฿',
+            franc: '₣',
+            lira: '₤',
+            peso: '₱',
+            rupee: '₹',
+            ruble: '₽',
+
+            // General symbols
             copyright: '©',
-            trademark: '™'
+            registered: '®',
+            sound_recording: '℗',
+            trademark: '™',
+            service_mark: '℠',
+            section: '§',
+            at: '@',
+            ampersand: '&',
+            number_sign: '#',
+            bullet: '•',
+            fahrenheit: '℉',
+            celsius: '℃',
+            number: '№',
+            escape: '␛',
+            delete: '␡',
+
+            // Brackets
+            left_bracket: '[',
+            right_bracket: ']',
+            left_parenthesis: '(',
+            right_parenthesis: ')',
+            left_brace: '{',
+            right_brace: '}',
+
+            // Math symbols
+            less_than: '<',
+            less_or_equal: '⋜',
+            greater_or_equal: '⋝',
+            greater_than: '>',
+            percent: '%',
+            per_mile: '‰',
+            per_ten_thousand: '‱',
+            degree: '°',
+            not_equal: '≠',
+            plus_or_minus: '±',
+            function: 'ƒ',
+            element_of: '∈',
+            not_element_of: '∉',
+            summation: '∑',
+            square_root: '√',
+            cube_root: '∛',
+            infinity: '∞',
+            integral: '∫',
+            one_half: '½',
+            one_third: '⅓',
+            one_quarter: '¼',
+            pi: 'ℼ',
+
+            // Punctuation
+            apostrophe: '\'',
+            quotation: '"',
+            left_double_quotation: '“',
+            right_double_quotation: '”',
+            left_pointing_quotation: '«',
+            right_pointing_quotation: '»',
+            comma: ',',
+            dot: '.',
+            colon: ':',
+            semicolon: ';',
+            question_mark: '?',
+            inverted_question_mark: '¿',
+            exclamation_mark: '!',
+            double_exclamation_mark: '‼',
+            inverted_exclamation_mark: '¡',
+            grave: '`',
+            acute: '´',
+            tilde: '~',
+            caret: '^',
+            hyphen: '-',
+            underscore: '_',
+            masculine_ordinal: 'º',
+            feminine_ordinal: 'ª',
+            pipe: '|',
+            slash: '/',
+            backslash: '\\',
+            ellipsis: '…',
+            umlaut: '¨',
+
+            // Letters
+            A_grave: 'À',
+            A_acute: 'Á',
+            A_circumflex: 'Â',
+            A_tilde: 'Ã',
+            A_umlaut: 'Ä',
+            A_ring: 'Å',
+            A_macron: 'Ā',
+            A_breve: 'Ă',
+            A_ogonek: 'Ą',
+            C_cedilla: 'Ç',
+            C_acute: 'Ć',
+            C_circumflex: 'Ĉ',
+            C_dot: 'Ċ',
+            C_caron: 'Č',
+            D_caron: 'Ď',
+            E_grave: 'È',
+            E_acute: 'É',
+            E_circumflex: 'Ê',
+            E_umlaut: 'Ë',
+            E_dot: 'Ė',
+            E_macron: 'Ē',
+            E_breve: 'Ē',
+            E_ogonek: 'Ę',
+            E_caron: 'Ě',
+            G_dot: 'Ġ',
+            G_circumflex: 'Ĝ',
+            G_breve: 'Ğ',
+            G_cedilla: 'Ģ',
+            G_caron: 'Ǧ',
+            G_acute: 'Ǵ',
+            I_grave: 'Ì',
+            I_acute: 'Í',
+            I_circumflex: 'Î',
+            I_umlaut: 'Î',
+            N_tilde: 'Ñ',
+            O_grave: 'Ò',
+            O_acute: 'Ó',
+            O_circumflex: 'Ô',
+            O_tilde: 'Õ',
+            O_umlaut: 'Ö',
+            O_slash: 'Ø',
+            U_grave: 'Ù',
+            U_acute: 'Ú',
+            U_circumflex: 'Û',
+            U_umlaut: 'Ü',
+            Y_acute: 'Ý',
+            ess_zed: 'ß',
+
+            // Arrows
+            left_arrow: '←',
+            right_arrow: '→',
+            up_arrow: '↑',
+            down_arrow: '↓',
+            left_right_arrow: '↔',
+            up_down_arrow: '↕',
+            clock_arrow: '↻',
+            anti_clock_arrow: '↺'
         });
     });
 
-    test('symbols code', () => {
-        const symbols = getSymbols();
-        expect(Object.keys(symbols)).toEqual([
-            'dollar',
-            'euro',
-            'yen',
-            'pound',
-            'infinity',
-            'copyright',
-            'trademark'
+    test('contains all symbol keys', () => {
+        expect(Object.keys(allSymbols)).toEqual([
+            // List all keys here
+            ...Object.keys(require('../src/symbols').currency),
+            ...Object.keys(require('../src/symbols').symbols),
+            ...Object.keys(require('../src/symbols').brackets),
+            ...Object.keys(require('../src/symbols').math),
+            ...Object.keys(require('../src/symbols').punctuation),
+            ...Object.keys(require('../src/symbols').letters),
+            ...Object.keys(require('../src/symbols').arrows)
         ]);
     });
 });
